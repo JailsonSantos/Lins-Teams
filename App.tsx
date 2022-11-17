@@ -5,6 +5,7 @@ import { NewGroup } from '@screens/NewGroup'
 import { Loading } from '@components/Loading'
 import { ThemeProvider } from 'styled-components'
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
+import { Players } from '@screens/Players'
 
 export default function App() {
 
@@ -22,7 +23,7 @@ export default function App() {
       />
 
       {fontsLoaded ?
-        <Groups />
+        <Players />
         :
         <Loading />
       }
