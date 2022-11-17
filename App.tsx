@@ -22,7 +22,7 @@ export default function App() {
       />
 
       {fontsLoaded ?
-        <NewGroup />
+        <Groups />
         :
         <Loading />
       }
