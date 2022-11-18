@@ -29,7 +29,6 @@ export function Groups() {
   }
 
   useFocusEffect(useCallback(() => {
-    console.log('Executou');
     fecthGroups();
   }, []));
 
