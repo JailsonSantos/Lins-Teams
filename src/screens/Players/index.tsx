@@ -7,11 +7,12 @@ import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
 import { FlatList } from 'react-native';
 import { useState } from "react";
+import { PlayerCard } from "@components/PlayerCard";
 
 export function Players() {
 
   const [team, setTeam] = useState('Time A');
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(['Jailson', 'Langela']);
 
   return (
     <Container>
@@ -49,6 +50,17 @@ export function Players() {
           {players.length}
         </NumberOfPlayers>
       </HeaderList>
+
+      <FlatList
+        data={players}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <PlayerCard
+            name={item}
+            onRemove={() => { }}
+          />
+        )}
+      />
 
     </Container>
   )
