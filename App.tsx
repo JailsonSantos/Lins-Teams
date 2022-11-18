@@ -1,11 +1,11 @@
 import theme from './src/theme'
-import { StatusBar } from 'react-native'
 import { Groups } from '@screens/Groups'
+import { StatusBar } from 'react-native'
+import { Players } from '@screens/Players'
 import { NewGroup } from '@screens/NewGroup'
 import { Loading } from '@components/Loading'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/native'
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
-import { Players } from '@screens/Players'
 
 export default function App() {
 
@@ -23,7 +23,7 @@ export default function App() {
       />
 
       {fontsLoaded ?
-        <Players />
+        <Groups />
         :
         <Loading />
       }
