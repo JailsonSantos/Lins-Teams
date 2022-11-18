@@ -10,9 +10,8 @@ import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
 
 export function Groups() {
-  const [groups, setGroups] = useState<string[]>(['Galera da Rocket']);
-
   const navigation = useNavigation();
+  const [groups, setGroups] = useState<string[]>(['Galera da Rocket']);
 
   function handleNewGroup() {
     navigation.navigate('new')
