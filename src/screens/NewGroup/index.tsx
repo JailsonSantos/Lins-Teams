@@ -19,7 +19,7 @@ export function NewGroup() {
 
     try {
       if (newGroup.trim().length === 0) {
-        return Alert.alert("Novo Grupo", "Informe o nome da turma.");
+        return Alert.alert("Nova Turma", "Informe o nome da turma.");
 
       }
 
@@ -31,7 +31,7 @@ export function NewGroup() {
       if (error instanceof AppError) {
         Alert.alert("Novo Grupo", error.message);
       } else {
-        Alert.alert("Novo Grupo", "Não foi possível criar um novo grupo");
+        Alert.alert("Novo Grupo", "Não foi possível criar uma nova turma");
         console.log(error);
       }
     }
