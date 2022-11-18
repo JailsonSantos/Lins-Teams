@@ -23,7 +23,7 @@ export function NewGroup() {
 
       }
 
-      await groupCreate(newGroup);
+      await groupCreate(newGroup.trim());
 
       navigation.navigate('players', { group: newGroup });
 

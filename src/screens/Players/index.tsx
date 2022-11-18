@@ -44,7 +44,7 @@ export function Players() {
     }
 
     const newPlayer = {
-      name: newPlayerName,
+      name: newPlayerName.trim(),
       team,
     }
 
@@ -84,14 +84,26 @@ export function Players() {
 
   async function handlePlayerRemove(playerName: string) {
     try {
-      await playerRemoveByGroup(playerName, group);
-      fetchPlayersByTeam();
+      Alert.alert(
+        'Revomer',
+        'Deseja remover o joagdor?',
+        [
+          { text: 'Não', style: 'cancel' },
+          {
+            text: 'Sim', onPress: async () => {
+              await playerRemoveByGroup(playerName, group);
+              fetchPlayersByTeam();
+            }
+          }
+        ]
+      );
 
     } catch (error) {
       console.log(error);
       Alert.alert('Remover pessoa', 'Não foi possível remover pessoa.');
     }
   }
+
 
   async function groupRemove() {
     try {
