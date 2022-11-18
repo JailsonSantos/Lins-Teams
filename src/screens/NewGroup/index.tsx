@@ -5,14 +5,23 @@ import { Button } from "@components/Button";
 import { HeightLight } from "@components/Highlight";
 import { Container, Content, Icon } from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { groupCreate } from "@storage/group/groupCreate";
 
 export function NewGroup() {
 
   const navigation = useNavigation();
   const [newGroup, setNewGroup] = useState('');
 
-  function handleNew() {
-    navigation.navigate('players', { group: newGroup });
+  async function handleNew() {
+
+    try {
+      await groupCreate(newGroup);
+
+      navigation.navigate('players', { group: newGroup });
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
